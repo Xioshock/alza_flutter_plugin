@@ -1,0 +1,7 @@
+import 'package:core/localization/localization_strings.dart';
+
+class ${CLASS_NAME} {
+  final xxx = Loc.create(
+    cs: "xxx",
+  ).toString();
+}

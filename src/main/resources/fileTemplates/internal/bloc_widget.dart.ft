@@ -1,0 +1,12 @@
+part of 'widgets.dart';
+
+class ${CLASS_NAME}Widget extends BlocWidget<${CLASS_NAME}State, ${CLASS_NAME}Bloc> {
+  ${CLASS_NAME}Widget({Key key}) : super(key: key);
+
+  @override
+  Widget blocBuilder(BuildContext context, ${CLASS_NAME}State state, ${CLASS_NAME}Bloc bloc) {
+    return Container(
+      color: Colors.yellow,
+    );
+  }
+}

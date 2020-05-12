@@ -1,0 +1,6 @@
+import 'package:core/bloc/bloc.dart';
+import 'package:flutter/material.dart';
+
+import '../${NAME}_bloc.dart';
+
+part '${NAME}_widget.dart';

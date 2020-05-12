@@ -1,0 +1,29 @@
+import 'dart:async';
+import 'package:copy_with_extension/copy_with_extension.dart';
+import 'package:core/bloc/bloc.dart';
+import 'package:to_string/to_string.dart';
+
+export 'widgets/widgets.dart';
+
+part '${NAME}_bloc.g.dart';
+part '${NAME}_event.dart';
+part '${NAME}_state.dart';
+
+@ToString()
+class ${CLASS_NAME}Bloc extends AlzaBloc<${CLASS_NAME}State> {
+  ${CLASS_NAME}Bloc({String id}) : super(id: id);
+
+  @override
+  ${CLASS_NAME}State get initialState => ${CLASS_NAME}State();
+
+  @override
+  Stream<${CLASS_NAME}State> mapEventToState(Event event) async* {
+    if (event is Start) {
+        //
+    }
+
+    if (event is Refresh) {
+        //
+    }
+  }
+}

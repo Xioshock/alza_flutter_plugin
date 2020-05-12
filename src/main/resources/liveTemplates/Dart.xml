@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templateSet group="Dart">
+
+    <template name="var"
+              value="var $variableName$;"
+              description="Dart 'var' variable"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="variableName"
+                  expression="&quot;variableName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="final"
+              value="final $type$ $variableName$ = $END$;"
+              description="Dart 'final' variable"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="type"
+                  expression="&quot;type&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="variableName"
+                  expression="&quot;variableName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="const"
+              value="const $type$ $variableName$ = $END$;"
+              description="Dart 'const' variable"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="type"
+                  expression="&quot;type&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="variableName"
+                  expression="&quot;variableName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="invar"
+              value="$type$ $variableName$;"
+              description="Dart public instance variable"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="type"
+                  expression="&quot;type&quot;"
+                  defaultValue="dynamic"
+                  alwaysStopAt="true"/>
+        <variable name="variableName"
+                  expression="&quot;variableName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="prinvar"
+              value="$type$ _$variableName$;"
+              description="Dart private instance variable"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="type"
+                  expression="&quot;type&quot;"
+                  defaultValue="dynamic"
+                  alwaysStopAt="true"/>
+        <variable name="variableName"
+                  expression="&quot;variableName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="mt"
+              value="$returnType$ $methodName$($param$) $async$ {&#10;  $END$&#10;}&#10;  "
+              description="Dart public method"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="returnType"
+                  expression="&quot;returnType&quot;"
+                  defaultValue="void"
+                  alwaysStopAt="true"/>
+        <variable name="methodName"
+                  expression="&quot;methodName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="param"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="async"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="prmt"
+              value="$returnType$ _$methodName$($param$) $async$ {&#10;  $END$&#10;}&#10;  "
+              description="Dart private method"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="returnType"
+                  expression="&quot;returnType&quot;"
+                  defaultValue="void"
+                  alwaysStopAt="true"/>
+        <variable name="methodName"
+                  expression="&quot;methodName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="param"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="async"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="arr"
+              value="$returnType$ $methodName$($param$) $async$ =&gt; $END$;&#10;  "
+              description="Dart public arrow function"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="returnType"
+                  expression="&quot;returnType&quot;"
+                  defaultValue="Object"
+                  alwaysStopAt="true"/>
+        <variable name="methodName"
+                  expression="&quot;methodName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="param"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="async"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="prarr"
+              value="$returnType$ _$methodName$($param$) $async$ =&gt; $END$;&#10;  "
+              description="Dart private arrow function"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="returnType"
+                  expression="&quot;returnType&quot;"
+                  defaultValue="Object"
+                  alwaysStopAt="true"/>
+        <variable name="methodName"
+                  expression="&quot;methodName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="param"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="async"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="nconst"
+              value="$CLASS$.$constName$($END$);"
+              description="Dart named constructor"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="CLASS"
+                  expression="dartClassNameMethodName()"
+                  defaultValue=""
+                  alwaysStopAt="false"/>
+        <variable name="constName"
+                  expression="&quot;constName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="oconst"
+              value="$CLASS$({$END$});"
+              description="Dart optional constructor"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="CLASS"
+                  expression="dartClassNameMethodName()"
+                  defaultValue=""
+                  alwaysStopAt="false"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="list"
+              value="List&lt;$type$&gt; $listName$"
+              description="Dart 'List' collection"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="type"
+                  expression="&quot;dynamic&quot;"
+                  defaultValue="dynamic"
+                  alwaysStopAt="true"/>
+        <variable name="listName"
+                  expression="&quot;listName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="map"
+              value="Map&lt;$key$, $value$&gt; $mapName$"
+              description="Dart 'Map' collection"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="key"
+                  expression="&quot;dynamic&quot;"
+                  defaultValue="dynamic"
+                  alwaysStopAt="true"/>
+        <variable name="value"
+                  expression="&quot;dynamic&quot;"
+                  defaultValue="dynamic"
+                  alwaysStopAt="true"/>
+        <variable name="mapName"
+                  expression="&quot;mapName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="set"
+              value="Set&lt;$type$&gt; $setName$"
+              description="Dart 'Set' collection"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="type"
+                  expression="&quot;dynamic&quot;"
+                  defaultValue="dynamic"
+                  alwaysStopAt="true"/>
+        <variable name="setName"
+                  expression="&quot;setName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="getarr"
+              value="$returnType$ get $name$ =&gt; $returnValue$;&#10;  "
+              description="Dart getter arrow function"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="returnType"
+                  expression="&quot;dynamic&quot;"
+                  defaultValue="dynamic"
+                  alwaysStopAt="true"/>
+        <variable name="name"
+                  expression="&quot;name&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="returnValue"
+                  expression="&quot;returnValue&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="impas"
+              value="import '$packageName$' as $alias$;"
+              description="Dart 'import as'"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="packageName"
+                  expression="&quot;packageName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="alias"
+                  expression="&quot;alias&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="impshow"
+              value="import '$packageName$' show $member$;"
+              description="Dart 'import show'"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="packageName"
+                  expression="&quot;packageName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="member"
+                  expression="&quot;member&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART_TOPLEVEL"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="impdeff"
+              value="import '$packageName$' deferred as $alias$;"
+              description="Dart 'import deffered as'"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="packageName"
+                  expression="&quot;packageName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="alias"
+                  expression="&quot;alias&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART_TOPLEVEL"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="imphide"
+              value="import '$packageName$' hide $excludedMember$;"
+              description="Dart 'import hide'"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="packageName"
+                  expression="&quot;packageName&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="excludedMember"
+                  expression="&quot;excludedMember&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART_TOPLEVEL"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="exphide"
+              value="export '$file$' hide $excludedMember$;"
+              description="Dart 'export hide'"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="file"
+                  expression="&quot;file&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="excludedMember"
+                  expression="&quot;excludedMember&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART_TOPLEVEL"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="expshow"
+              value="export '$file$' show $member$;"
+              description="Dart 'export show'"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="file"
+                  expression="&quot;file&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="member"
+                  expression="&quot;member&quot;"
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART_TOPLEVEL"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="switch case"
+              value="switch($var$) {&#10;  case $case$:&#10;    $action$&#10;    break;&#10;  default:&#10;}&#10;  "
+              description="Dart switch statement"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="var"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="case"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <variable name="action"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="if"
+              value="if ($condition$) {&#10;  $END$&#10;}  "
+              description="Dart if statement"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="condition"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="if else"
+              value="if ($condition$) {&#10;  $END$&#10;} else {&#10;  $END$&#10;}"
+              description="Dart if/else statement"
+              toReformat="false"
+              toShortenFQNames="true">
+        <variable name="condition"
+                  expression=""
+                  defaultValue=""
+                  alwaysStopAt="true"/>
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+    <template name="main"
+              value="main() {&#10;  $END$&#10;}"
+              description="Dart main method"
+              toReformat="false"
+              toShortenFQNames="true">
+        <context>
+            <option name="DART"
+                    value="true"/>
+        </context>
+    </template>
+
+</templateSet>

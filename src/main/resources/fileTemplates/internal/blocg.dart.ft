@@ -1,0 +1,15 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of '${NAME}_bloc.dart';
+
+// **************************************************************************
+// ToStringGenerator
+// **************************************************************************
+
+String _$${CLASS_NAME}BlocToString(${CLASS_NAME}Bloc o) {
+  return """${CLASS_NAME}Bloc{}""";
+}
+
+String _$${CLASS_NAME}StateToString(${CLASS_NAME}State o) {
+  return """${CLASS_NAME}State{}""";
+}

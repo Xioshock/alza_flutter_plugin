@@ -1,0 +1,11 @@
+part of '${NAME}_bloc.dart';
+
+@CopyWith()
+@ToString()
+class ${CLASS_NAME}State extends BlocState {
+  @override
+  List<Object> get props => [];
+
+  @override
+  String toString() => _$${CLASS_NAME}StateToString(this);
+}

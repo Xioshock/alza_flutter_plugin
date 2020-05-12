@@ -1,0 +1,68 @@
+<idea-plugin>
+    <id>cz.alza.flutter</id>
+    <name>Alza Flutter Plugin</name>
+    <vendor email="jan.svec@alza.cz">Jan Švec</vendor>
+    <idea-version since-build="183.6156"/>
+
+    <description>Alza Flutter Plugin</description>
+
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>org.jetbrains.plugins.yaml</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>Dart</depends>
+    <depends>io.flutter</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!--        Dart Code Snippets-->
+        <defaultLiveTemplatesProvider implementation="cz.alza.flutter.templates.livetemplates.DartTemplateProvider"/>
+
+        <!--        Flutter Widget Snippets-->
+        <defaultLiveTemplatesProvider implementation="cz.alza.flutter.templates.livetemplates.FlutterTemplateProvider"/>
+        <codeInsight.template.postfixTemplateProvider implementationClass="cz.alza.flutter.templates.postfixtemplates.FlutterPostfixTemplateProvider"
+                                                      language="Dart"/>
+
+        <!--        Snippet Preview-->
+        <documentationProvider implementation="cz.alza.flutter.templates.livetemplates.LiveTemplatePreviewProvider"
+                               order="first"/>
+        <lang.documentationProvider language="HTML"
+                                    implementationClass="cz.alza.flutter.templates.livetemplates.LiveTemplatePreviewProvider"
+                                    order="first"/>
+
+        <!--        File Templates-->
+        <internalFileTemplate name="stateful_widget"/>
+        <internalFileTemplate name="stateless_widget"/>
+
+        <errorHandler implementation="cz.alza.flutter.PluginBugReportSubmitter"/>
+
+    </extensions>
+
+    <extensions defaultExtensionNs="Dart">
+        <completionExtension implementation="cz.alza.flutter.editor.FlutterIconCompletionContributor"
+                             order="last"/>
+    </extensions>
+
+    <extensions defaultExtensionNs="org.jetbrains.plugins.yaml">
+        <extension order="last"/>
+    </extensions>
+
+    <actions>
+        <action id="Flutter.NewBloc"
+                class="cz.alza.flutter.actions.NewFlutterBlocAction"
+                text="Alza Bloc"
+                description="Create a new Alza bloc">
+            <add-to-group group-id="NewGroup"
+                          anchor="before"
+                          relative-to-action="NewFromTemplate"/>
+        </action>
+        <action id="Flutter.ExtractWidgetToFile"
+                class="cz.alza.flutter.actions.ExtractWidgetToFileAction"
+                text="Extract Widget to File">
+            <add-to-group group-id="RefactoringMenu"
+                          relative-to-action="RefactoringMenu1"
+                          anchor="after"/>
+            <keyboard-shortcut keymap="$default"
+                               first-keystroke="ctrl alt E"/>
+        </action>
+    </actions>
+</idea-plugin>

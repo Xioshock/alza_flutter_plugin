@@ -1,0 +1,3 @@
+part of '${NAME}_bloc.dart';
+
+abstract class ${CLASS_NAME}Event extends Event {}
