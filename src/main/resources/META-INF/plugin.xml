@@ -47,7 +47,7 @@
     </extensions>
 
     <actions>
-        <action id="Flutter.NewBloc"
+        <action id="Flutter.AlzaBloc"
                 class="cz.alza.flutter.actions.NewFlutterBlocAction"
                 text="Alza Bloc"
                 description="Create a new Alza bloc">
@@ -56,23 +56,32 @@
                           relative-to-action="NewFromTemplate"/>
         </action>
 
-        <action id="Flutter.NewEntity"
+        <action id="Flutter.AlzaEntity"
             class="cz.alza.flutter.actions.NewEntityAction"
             text="Alza Entity"
             description="Create a new Alza entity">
             <add-to-group group-id="NewGroup"
                 anchor="after"
-                relative-to-action="Flutter.NewBloc"/>
+                relative-to-action="Flutter.AlzaBloc"/>
         </action>
 
-        <action id="Flutter.ExtractWidgetToFile"
-                class="cz.alza.flutter.actions.ExtractWidgetToFileAction"
-                text="Extract Widget to File">
-            <add-to-group group-id="RefactoringMenu"
-                          relative-to-action="RefactoringMenu1"
-                          anchor="after"/>
-            <keyboard-shortcut keymap="$default"
-                               first-keystroke="ctrl alt E"/>
+        <action id="Flutter.AlzaDataClass"
+            class="cz.alza.flutter.actions.NewDataClassAction"
+            text="Alza Data Class"
+            description="Create a new Alza data class">
+            <add-to-group group-id="NewGroup"
+                anchor="after"
+                relative-to-action="Flutter.AlzaEntity"/>
         </action>
+
+<!--        <action id="Flutter.ExtractWidgetToFile"-->
+<!--                class="cz.alza.flutter.actions.ExtractWidgetToFileAction"-->
+<!--                text="Extract Widget to File">-->
+<!--            <add-to-group group-id="RefactoringMenu"-->
+<!--                          relative-to-action="RefactoringMenu1"-->
+<!--                          anchor="after"/>-->
+<!--            <keyboard-shortcut keymap="$default"-->
+<!--                               first-keystroke="ctrl alt E"/>-->
+<!--        </action>-->
     </actions>
 </idea-plugin>

@@ -5,13 +5,7 @@ import com.intellij.ide.fileTemplates.FileTemplateUtil
 import com.intellij.openapi.project.Project
 import com.intellij.psi.PsiDirectory
 import cz.alza.flutter.models.Bloc
-import java.util.*
-
 object TemplateBuilder {
-
-	enum class Template {
-		Event, State, Bloc, Locs, BlocG
-	}
 
 	private object Properties {
 		const val Name = "NAME"
@@ -23,13 +17,15 @@ object TemplateBuilder {
 		val manager = FileTemplateManager.getInstance(project)
 		val properties = buildProperties(manager.defaultProperties, bloc)
 
-		mapTemplates(bloc).forEach { template ->
-			buildTemplate(manager, template.key.name, template.value, properties, destinationDirectory)
-		}
+		buildTemplate(manager, "alza_state", bloc.stateFilename, properties, destinationDirectory)
+		buildTemplate(manager, "alza_event", bloc.eventFilename, properties, destinationDirectory)
+		buildTemplate(manager, "alza_bloc", bloc.blocFilename, properties, destinationDirectory)
+		buildTemplate(manager, "alza_locs", bloc.locsFileName, properties, destinationDirectory)
+		buildTemplate(manager, "alza_blocg", bloc.blocGFileName, properties, destinationDirectory)
 
 		val widgetDirectory = destinationDirectory.createSubdirectory("widgets")
-		buildTemplate(manager, "widgets", "widgets.dart", properties, widgetDirectory)
-		buildTemplate(manager, "bloc_widget", properties.getProperty("NAME") + "_widget.dart", properties, widgetDirectory)
+		buildTemplate(manager, "alza_widgets", "widgets.dart", properties, widgetDirectory)
+		buildTemplate(manager, "alza_bloc_widget", properties.getProperty("NAME") + "_widget.dart", properties, widgetDirectory)
 
 		val dataDirectory = destinationDirectory.createSubdirectory("data")
 		buildTemplate(manager, "blank", "data.dart", properties, dataDirectory)
@@ -42,23 +38,21 @@ object TemplateBuilder {
 		val manager = FileTemplateManager.getInstance(project)
 		val properties = buildProperties(manager.defaultProperties, name)
 
-		buildTemplate(manager, "entity", properties.getProperty("NAME"), properties, destinationDirectory)
-		buildTemplate(manager, "entityg", properties.getProperty("NAME") + ".g", properties, destinationDirectory)
+		buildTemplate(manager, "alza_entity", properties.getProperty("NAME"), properties, destinationDirectory)
+		buildTemplate(manager, "alza_entityg", properties.getProperty("NAME") + ".g", properties, destinationDirectory)
+	}
+
+	fun buildDataClass(name: String, project: Project, destinationDirectory: PsiDirectory) {
+		val manager = FileTemplateManager.getInstance(project)
+		val properties = buildProperties(manager.defaultProperties, name)
+
+		buildTemplate(manager, "alza_struct", properties.getProperty("NAME"), properties, destinationDirectory)
+		buildTemplate(manager, "alza_structg", properties.getProperty("NAME") + ".g", properties, destinationDirectory)
 	}
 
 	private fun buildTemplate(manager: FileTemplateManager, templateName: String, fileName: String, properties: java.util.Properties, destinationDirectory: PsiDirectory) {
 		val fileTemplate = manager.getInternalTemplate(templateName.toLowerCase())
 		FileTemplateUtil.createFromTemplate(fileTemplate, fileName, properties, destinationDirectory)
-	}
-
-	private fun mapTemplates(bloc: Bloc) = Template.values().associate {
-		when (it) {
-			Template.State -> Pair(it, bloc.stateFilename)
-			Template.Event -> Pair(it, bloc.eventFilename)
-			Template.Bloc -> Pair(it, bloc.blocFilename)
-			Template.Locs -> Pair(it, bloc.locsFileName)
-			Template.BlocG -> Pair(it, bloc.blocGFileName)
-		}
 	}
 
 	private fun buildProperties(properties: java.util.Properties, bloc: Bloc) = properties.apply {
