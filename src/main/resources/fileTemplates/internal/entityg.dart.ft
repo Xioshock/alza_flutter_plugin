@@ -1,0 +1,34 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of '${NAME}.dart';
+
+// **************************************************************************
+// CopyWithGenerator
+// **************************************************************************
+
+// ignore_for_file: argument_type_not_assignable, implicit_dynamic_type, always_specify_types
+
+extension ${CLASS_NAME}CopyWithExtension on ${CLASS_NAME} {
+  ${CLASS_NAME} copyWith() {
+    return ${CLASS_NAME}();
+  }
+}
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+${CLASS_NAME} _$${CLASS_NAME}FromJson(Map<String, dynamic> json) {
+  return ${CLASS_NAME}();
+}
+
+Map<String, dynamic> _$${CLASS_NAME}ToJson(${CLASS_NAME} instance) => <String, dynamic>{
+    };
+
+// **************************************************************************
+// ToStringGenerator
+// **************************************************************************
+
+String _$${CLASS_NAME}ToString(${CLASS_NAME} o) {
+  return """${CLASS_NAME}{}""";
+}

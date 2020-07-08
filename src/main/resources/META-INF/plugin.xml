@@ -55,6 +55,16 @@
                           anchor="before"
                           relative-to-action="NewFromTemplate"/>
         </action>
+
+        <action id="Flutter.NewEntity"
+            class="cz.alza.flutter.actions.NewEntityAction"
+            text="Alza Entity"
+            description="Create a new Alza entity">
+            <add-to-group group-id="NewGroup"
+                anchor="after"
+                relative-to-action="Flutter.NewBloc"/>
+        </action>
+
         <action id="Flutter.ExtractWidgetToFile"
                 class="cz.alza.flutter.actions.ExtractWidgetToFileAction"
                 text="Extract Widget to File">
